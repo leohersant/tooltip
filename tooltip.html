@@ -11,14 +11,13 @@
 
     <script>
         $(document).ready(function () {
-            $("#myTooltip").append(tooltip("http://www.yahoo.com", "linuxtux.jpg", "Welcome to linux"));
+            $("#myTooltip").append(tooltip("http://www.yahoo.com", "linuxtux.jpg", "Welcome to linux", "top"));
         });
 
-
-        function tooltip(url, image, tooltipText) {
+        function tooltip(url, image, tooltipText, tooltipPosition) {
 
             var html = [
-                '<a href="' + url + '" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title= "' + tooltipText + '">',
+                '<a href="' + url + '" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="'+ tooltipPosition +'" title= "' + tooltipText + '">',
                 '<img src="' + image + '">',
                 '</a>'
             ].join("\n");
