@@ -11,19 +11,18 @@
 
     <script>
         $(document).ready(function () {
-            $("#myTooltip").append(tooltip("http://www.yahoo.com", "linuxtux.jpg", "Welcome to linux", "top"));
+            $("#myTooltip").append(tooltip("Allo","http://www.yahoo.com", "Welcome to linux", "top", "far fa-question-circle"));
         });
 
-        function tooltip(url, image, tooltipText, tooltipPosition) {
-
+        function tooltip(label, url, tooltipText, tooltipPosition, fontAwesome) {
             var html = [
-                '<a href="' + url + '" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="'+ tooltipPosition +'" title= "' + tooltipText + '">',
-                '<img src="' + image + '">',
+                '<label class="control-label col-md-9">' + label + '',
+                '<a href="' + url + '" data-toggle="tooltip" data-placement="' + tooltipPosition + '" title= "' + tooltipText + '">',
+                '<i class="' + fontAwesome + '" style="font-size:24px;"></i>',
                 '</a>'
             ].join("\n");
 
             return html;
-
         }
     </script>
 
