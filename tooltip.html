@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myTooltip").append(tooltip("http://www.yahoo.com", "linuxtux.jpg", "Welcome to linux"));
+        });
+
+
+        function tooltip(url, image, tooltipText) {
+
+            var html = [
+                '<a href="' + url + '" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title= "' + tooltipText + '">',
+                '<img src="' + image + '">',
+                '</a>'
+            ].join("\n");
+
+            return html;
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Bootstrap Tooltip</h1>
+    <p>Juste place a div with id and call it with jquery inside $( document ).ready()</p>
+
+    <!-- This is the tooltip -->
+    <div id="myTooltip"></div>
+
+</body>
+
+</html>
